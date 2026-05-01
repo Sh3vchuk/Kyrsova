@@ -1,0 +1,6 @@
+@Kyrsova_HostAddress = http://localhost:5080
+
+GET {{Kyrsova_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
