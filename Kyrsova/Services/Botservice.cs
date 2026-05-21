@@ -19,7 +19,7 @@ namespace Kyrsova.Services
             // налаштовуємо клієнт бота
             _client = new DiscordClient(new DiscordConfiguration()
             {
-                Token = "MTUwNTUwNzczOTg3MzU3OTEyOQ.GMct2I.RxcFWkH9zYcwKonbOtGObXiugtpFkTq-6t1DaA",
+                Token = "DISCORD_TOKEN_HERE",
                 TokenType = TokenType.Bot,
                 Intents = DiscordIntents.AllUnprivileged | DiscordIntents.MessageContents // дозвіл читати повідомлення
             });
