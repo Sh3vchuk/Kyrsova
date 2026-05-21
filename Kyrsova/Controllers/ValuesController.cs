@@ -17,7 +17,7 @@ namespace Kyrsova.Controllers
         {
             using HttpClient client = new HttpClient();
 
-            string apikey = "twmKWo0WrvoKgqEwDS9T8weQq7GVhVI1kT6Pln0x4vfWXI6TyRMz8BGo";
+            string apikey = "PEXELS_API_KEY";
 
             client.DefaultRequestHeaders.Add("Authorization", apikey);
 
@@ -63,7 +63,7 @@ namespace Kyrsova.Controllers
         public async Task<IActionResult> GetPhotoDetails(long id)
         {
             using HttpClient client = new HttpClient();
-            string apikey = "twmKWo0WrvoKgqEwDS9T8weQq7GVhVI1kT6Pln0x4vfWXI6TyRMz8BGo";
+            string apikey = "PEXELS_API_KEY";
 
             string url = $"https://api.pexels.com/v1/photos/{id}"; // формуємо URL до конкретної фотографії за її ID
 
@@ -98,7 +98,7 @@ namespace Kyrsova.Controllers
         public async Task<IActionResult> GetPopularPhotos()
         {
             using HttpClient client = new HttpClient();
-            string apikey = "twmKWo0WrvoKgqEwDS9T8weQq7GVhVI1kT6Pln0x4vfWXI6TyRMz8BGo";
+            string apikey = "PEXELS_API_KEY";
 
             string url = "https://api.pexels.com/v1/curated?per_page=10";
 
