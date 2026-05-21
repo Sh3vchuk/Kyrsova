@@ -15,7 +15,7 @@ namespace Kyrsova.Services
             try
             {
                 using HttpClient client = new HttpClient();
-                string apikey = "twmKWo0WrvoKgqEwDS9T8weQq7GVhVI1kT6Pln0x4vfWXI6TyRMz8BGo";
+                string apikey = "PEXELS_API_KEY";
                 client.DefaultRequestHeaders.Add("Authorization", apikey);
 
                 string url = $"https://api.pexels.com/v1/search?query={zapyt}&per_page=15";
@@ -60,7 +60,7 @@ namespace Kyrsova.Services
             try
             {
                 using HttpClient client = new HttpClient();
-                string apikey = "twmKWo0WrvoKgqEwDS9T8weQq7GVhVI1kT6Pln0x4vfWXI6TyRMz8BGo";
+                string apikey = "PEXELS_API_KEY";
                 string url = $"https://api.pexels.com/v1/photos/{id}"; // формуємо URL до конкретної фотографії за її ID
 
                 client.DefaultRequestHeaders.Add("Authorization", apikey);
@@ -94,7 +94,7 @@ namespace Kyrsova.Services
             try
             {
                 using HttpClient client = new HttpClient();
-                string apikey = "twmKWo0WrvoKgqEwDS9T8weQq7GVhVI1kT6Pln0x4vfWXI6TyRMz8BGo";
+                string apikey = "PEXELS_API_KEY";
                 string url = "https://api.pexels.com/v1/curated?per_page=10";
 
                 client.DefaultRequestHeaders.Add("Authorization", apikey);
