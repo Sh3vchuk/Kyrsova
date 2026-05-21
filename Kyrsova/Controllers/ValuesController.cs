@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Kyrsova.Models;
 using System.Linq;
-using System; 
+using System;
 
 namespace Kyrsova.Controllers
 {
@@ -12,7 +12,7 @@ namespace Kyrsova.Controllers
     [Route("api/[controller]")]
     public class PexelsController : ControllerBase
     {
-        [HttpGet("get-photo")] // 1-Й метод: основний пошук
+        [HttpGet("get-photo")] // 1-й метод: основний пошук
         public async Task<IActionResult> GetPhotoInfo(string zapyt)
         {
             using HttpClient client = new HttpClient();
@@ -40,7 +40,7 @@ namespace Kyrsova.Controllers
 
             var processedphotos = pexels.Photos
                 .Where(p => p.Width > p.Height).OrderBy(p => p.Photographer).ToList();
-            // фільтраціял: я кожної картинки p, перевіряємо, чи її ширина (width) більша за її висоту (height)
+            // фільтраціял: для кожної картинки p, перевіряємо, чи її ширина більша за її висоту 
             // сортування: список картинок тепер відсортований за алфавітом імен фотографів (від А до Z)
             // ToList() просто допоміг зберегти цей  результат у змінну processedphotos
 
@@ -53,15 +53,13 @@ namespace Kyrsova.Controllers
 
                 Photos = processedphotos.Select(p => new // виводимо масив уже відфільтрованих фотографій
                 {
-                    Id = p.Id,
-                    Author = p.Photographer,
-                    Resolution = $"{p.Width}x{p.Height}",
+                    p.Id,
                     OriginalLink = p.Src?.Original
                 })
             });
         }
 
-        [HttpGet("details/{id}")] // 2-Й метод: пошук деталей за ID
+        [HttpGet("details/{id}")] // 2-й метод: пошук деталей за ID
         public async Task<IActionResult> GetPhotoDetails(long id)
         {
             using HttpClient client = new HttpClient();
@@ -96,7 +94,7 @@ namespace Kyrsova.Controllers
             });
         }
 
-        [HttpGet("popular")] // 3-Й метод: популярні картинки
+        [HttpGet("popular")] // 3-й метод: популярні картинки
         public async Task<IActionResult> GetPopularPhotos()
         {
             using HttpClient client = new HttpClient();

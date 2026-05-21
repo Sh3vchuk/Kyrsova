@@ -7,6 +7,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// додаємо нашого бота як фоновий сервіс
+builder.Services.AddHostedService<Kyrsova.Services.BotService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
