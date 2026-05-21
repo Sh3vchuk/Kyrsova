@@ -7,7 +7,7 @@ namespace Kyrsova.Services
     public class DBService
     {
         // рядок підключення (адреса, ім'я бази і пароль)
-        private readonly string _connectionString = "Host=localhost;Port=5432;Database=Pexelsbot;Username=postgres;Password=1488;";
+        private readonly string _connectionString = "Host=localhost;Port=5432;Database=Pexelsbot;Username=postgres;Password=PASSWORD;";
 
         // метод для збереження картинки в базу
         public async Task AddFavoriteAsync(ulong dsUserId, long photoId, string photoUrl)
